@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { 
-  ShieldCheck, 
-  Search, 
-  ArrowRight, 
-  Shield, 
-  CheckCircle2, 
-  Lock, 
+import {
+  ShieldCheck,
+  Search,
+  ArrowRight,
+  Shield,
+  CheckCircle2,
+  Lock,
   RotateCcw,
   Laptop,
   Smartphone,
@@ -46,7 +46,7 @@ export default function LandingPage() {
         </div>
 
         <div className="container mx-auto px-4 md:px-6">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -81,7 +81,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-2xl font-bold text-zinc-900 font-mono tracking-tight">SUI</div>
+              <div className="text-2xl font-bold text-zinc-900 font-mono tracking-tight">USDC</div>
               <div className="text-[10px] text-zinc-400 uppercase tracking-[0.2em] font-bold mt-1">Native Settlement</div>
             </div>
             <div className="text-center">
@@ -110,7 +110,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
@@ -156,7 +156,7 @@ export default function LandingPage() {
         <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[150px]" />
         </div>
-        
+
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -165,7 +165,7 @@ export default function LandingPage() {
               <p className="text-zinc-400 text-lg mb-10 leading-relaxed">
                 Traditional escrow is all-or-nothing. With Warranty on Chain, buyers can settle for a portion of the price if the device condition isn't perfect—auto-refunding the difference instantly.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 border border-blue-500/20">
@@ -189,30 +189,30 @@ export default function LandingPage() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-[3rem]">
-               <div className="space-y-8">
-                  <div className="flex justify-between items-center pb-6 border-b border-white/10">
-                    <div className="text-sm font-bold uppercase tracking-widest text-zinc-500">Escrow Balance</div>
-                    <div className="text-2xl font-black">1000 SUI</div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-zinc-400">Release to Seller</span>
-                      <span className="text-blue-400 font-bold">600 SUI</span>
-                    </div>
-                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                      <div className="h-full bg-blue-500 w-[60%]" />
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-zinc-400">Auto-refund to Buyer</span>
-                      <span className="text-green-400 font-bold">400 SUI</span>
-                    </div>
-                  </div>
+              <div className="space-y-8">
+                <div className="flex justify-between items-center pb-6 border-b border-white/10">
+                  <div className="text-sm font-bold uppercase tracking-widest text-zinc-500">Escrow Balance</div>
+                  <div className="text-2xl font-black">1000 USDC</div>
+                </div>
 
-                  <Button className="w-full bg-blue-600 hover:bg-blue-500 h-12 rounded-2xl font-bold">
-                    Execute Partial Settlement
-                  </Button>
-               </div>
+                <div className="space-y-4">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-zinc-400">Release to Seller</span>
+                    <span className="text-blue-400 font-bold">600 USDC</span>
+                  </div>
+                  <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                    <div className="h-full bg-blue-500 w-[60%]" />
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-zinc-400">Auto-refund to Buyer</span>
+                    <span className="text-green-400 font-bold">400 USDC</span>
+                  </div>
+                </div>
+
+                <Button className="w-full bg-blue-600 hover:bg-blue-500 h-12 rounded-2xl font-bold">
+                  Execute Partial Settlement
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -257,7 +257,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="bg-zinc-900 rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-            
+
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready for trust-less gadget trading?</h2>
               <p className="text-zinc-400 text-lg mb-12">

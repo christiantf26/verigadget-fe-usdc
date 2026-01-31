@@ -5,12 +5,12 @@ export interface WarrantyItem {
   name: string;
   description: string;
   image_url: string;
-  price: number; // in SUI/USDC
+  price: number; // in USDC
   status: WarrantyStatus;
   seller: string; // Address
   buyer?: string; // Address
   balance: number; // Escrowed funds
-  
+
   // Metadata for the Gadget marketplace context
   category: "Laptop" | "Phone" | "Tablet" | "Wearable";
   brand: string;

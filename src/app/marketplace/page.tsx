@@ -3,10 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { 
-  Search, 
-  Filter, 
-  ShieldCheck, 
+import {
+  Search,
+  Filter,
+  ShieldCheck,
   Clock,
   LayoutGrid,
   List as ListIcon,
@@ -18,12 +18,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
 } from "@/components/ui/select";
 
 export default function MarketplacePage() {
@@ -32,16 +32,16 @@ export default function MarketplacePage() {
   const [selectedCondition, setSelectedCondition] = useState<string>("all");
 
   const filteredItems = WARRANTY_ITEMS.filter(item => {
-    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          item.brand.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.brand.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === "all" || item.category.toLowerCase() === selectedCategory.toLowerCase();
     const matchesCondition = selectedCondition === "all" || item.condition.toLowerCase() === selectedCondition.toLowerCase();
-    
+
     return matchesSearch && matchesCategory && matchesCondition;
   });
 
   const getStatusBadge = (status: number) => {
-    switch(status) {
+    switch (status) {
       case 0: return <Badge className="bg-green-500 text-white border-none">Listed</Badge>;
       case 1: return <Badge className="bg-blue-500 text-white border-none">Locked</Badge>;
       case 2: return <Badge className="bg-zinc-500 text-white border-none">Completed</Badge>;
@@ -70,14 +70,14 @@ export default function MarketplacePage() {
         <div className="bg-white p-4 rounded-2xl border border-zinc-200 shadow-sm mb-10 flex flex-col lg:flex-row gap-4">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
-            <Input 
-              placeholder="Search by model, brand, or NFT ID..." 
+            <Input
+              placeholder="Search by model, brand, or NFT ID..."
               className="pl-10 h-11 bg-zinc-50/50 border-zinc-100 focus:bg-white transition-all rounded-xl"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
-          
+
           <div className="flex flex-wrap items-center gap-3">
             <Select value={selectedCategory} onValueChange={setSelectedCategory}>
               <SelectTrigger className="w-[140px] h-11 rounded-xl border-zinc-100 bg-zinc-50/50">
@@ -109,9 +109,9 @@ export default function MarketplacePage() {
               <Filter className="w-4 h-4 mr-2" />
               More Filters
             </Button>
-            
+
             <div className="h-11 w-[1px] bg-zinc-200 mx-2 hidden sm:block" />
-            
+
             <div className="flex bg-zinc-100 p-1 rounded-xl">
               <Button variant="ghost" size="icon" className="h-9 w-9 rounded-lg bg-white shadow-sm text-zinc-900">
                 <LayoutGrid className="w-4 h-4" />
@@ -136,9 +136,9 @@ export default function MarketplacePage() {
                 <Link href={`/marketplace/${item.id}`}>
                   <Card className="group overflow-hidden border-zinc-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 rounded-[2rem] bg-white relative">
                     <div className="aspect-[4/3] overflow-hidden relative">
-                      <img 
-                        src={item.image_url} 
-                        alt={item.name} 
+                      <img
+                        src={item.image_url}
+                        alt={item.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-4 left-4 flex gap-2">
@@ -159,10 +159,10 @@ export default function MarketplacePage() {
                           {item.name}
                         </h3>
                       </div>
-                      
+
                       <div className="flex items-center gap-4 mb-6">
                         <div className="text-2xl font-black text-zinc-900 flex items-baseline gap-1">
-                          {item.price} <span className="text-sm font-bold text-zinc-400">SUI</span>
+                          {item.price} <span className="text-sm font-bold text-zinc-400">USDC</span>
                         </div>
                         <div className="flex items-center gap-1.5 text-xs font-medium text-zinc-500 bg-zinc-50 px-2.5 py-1 rounded-full border border-zinc-100">
                           <Clock className="w-3 h-3" />
@@ -173,7 +173,7 @@ export default function MarketplacePage() {
                       <div className="pt-4 border-t border-zinc-100 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
-                             <Box className="w-3 h-3 text-blue-600" />
+                            <Box className="w-3 h-3 text-blue-600" />
                           </div>
                           <span className="text-[10px] text-zinc-400 font-mono">{item.id.substring(0, 10)}...</span>
                         </div>
@@ -195,8 +195,8 @@ export default function MarketplacePage() {
             </div>
             <h3 className="text-xl font-bold text-zinc-900 mb-2">No listings found</h3>
             <p className="text-zinc-500">Try adjusting your filters or searching for an NFT ID.</p>
-            <Button 
-              variant="link" 
+            <Button
+              variant="link"
               className="mt-4 text-blue-600 font-bold"
               onClick={() => {
                 setSearchQuery("");

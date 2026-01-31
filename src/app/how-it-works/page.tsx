@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  ShieldCheck, 
-  Search, 
-  Lock, 
-  Clock, 
-  CheckCircle2, 
+import {
+  ShieldCheck,
+  Search,
+  Lock,
+  Clock,
+  CheckCircle2,
   AlertTriangle,
   ArrowRight,
   ShieldAlert,
@@ -16,12 +16,13 @@ import {
   Smartphone,
   Fingerprint
 } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { 
-  Accordion, 
-  AccordionContent, 
-  AccordionItem, 
-  AccordionTrigger 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
 } from "@/components/ui/accordion";
 
 export default function HowItWorksPage() {
@@ -56,7 +57,7 @@ export default function HowItWorksPage() {
         <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-black text-zinc-900 mb-6">The Partial Settlement Protocol</h1>
           <p className="text-zinc-500 max-w-2xl mx-auto text-lg leading-relaxed">
-            Built on the Sui blockchain, Warranty on Chain replaces middle-men with immutable smart contract logic. 
+            Built on the Sui blockchain, Warranty on Chain replaces middle-men with immutable smart contract logic.
             <strong> You control the funds.</strong>
           </p>
         </div>
@@ -67,7 +68,7 @@ export default function HowItWorksPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {steps.map((step, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -91,54 +92,54 @@ export default function HowItWorksPage() {
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[150px]" />
         </div>
-        
+
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="bg-white rounded-[3rem] p-8 md:p-12 text-zinc-900 relative">
-               <div className="absolute top-8 right-8 w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
-                  <Split className="w-6 h-6" />
-               </div>
-               <h3 className="text-3xl font-black mb-8 leading-tight">Why Partial Settlement?</h3>
-               <div className="space-y-6">
-                  <div className="flex gap-4">
-                     <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0 mt-1">
-                        <CheckCircle2 className="w-4 h-4" />
-                     </div>
-                     <p className="text-zinc-600 text-sm">
-                        <strong>Negotiate post-delivery:</strong> If a laptop has a scratch not mentioned, offer $1,300 instead of $1,400.
-                     </p>
+              <div className="absolute top-8 right-8 w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                <Split className="w-6 h-6" />
+              </div>
+              <h3 className="text-3xl font-black mb-8 leading-tight">Why Partial Settlement?</h3>
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0 mt-1">
+                    <CheckCircle2 className="w-4 h-4" />
                   </div>
-                  <div className="flex gap-4">
-                     <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0 mt-1">
-                        <CheckCircle2 className="w-4 h-4" />
-                     </div>
-                     <p className="text-zinc-600 text-sm">
-                        <strong>Instant Refund:</strong> The $100 difference is auto-refunded to the buyer immediately by the smart contract.
-                     </p>
+                  <p className="text-zinc-600 text-sm">
+                    <strong>Negotiate post-delivery:</strong> If a laptop has a scratch not mentioned, offer $1,300 instead of $1,400.
+                  </p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0 mt-1">
+                    <CheckCircle2 className="w-4 h-4" />
                   </div>
-                  <div className="flex gap-4">
-                     <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0 mt-1">
-                        <CheckCircle2 className="w-4 h-4" />
-                     </div>
-                     <p className="text-zinc-600 text-sm">
-                        <strong>No Disputes:</strong> Avoid weeks of platform mediation. Settle directly on-chain.
-                     </p>
+                  <p className="text-zinc-600 text-sm">
+                    <strong>Instant Refund:</strong> The $100 difference is auto-refunded to the buyer immediately by the smart contract.
+                  </p>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0 mt-1">
+                    <CheckCircle2 className="w-4 h-4" />
                   </div>
-               </div>
-               <div className="mt-10 p-4 bg-zinc-50 rounded-2xl border border-zinc-100 font-mono text-[10px] text-zinc-400">
-                  // finalize_and_split function<br/>
-                  transfer(seller_amount, seller);<br/>
-                  transfer(balance - seller_amount, buyer);
-               </div>
+                  <p className="text-zinc-600 text-sm">
+                    <strong>No Disputes:</strong> Avoid weeks of platform mediation. Settle directly on-chain.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-10 p-4 bg-zinc-50 rounded-2xl border border-zinc-100 font-mono text-[10px] text-zinc-400">
+                  // finalize_and_split function<br />
+                transfer(seller_amount, seller);<br />
+                transfer(balance - seller_amount, buyer);
+              </div>
             </div>
 
             <div>
               <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight">Shared Objects & Discoverability</h2>
               <p className="text-zinc-400 text-lg mb-10 leading-relaxed">
-                Traditional escrows are hidden in private databases. On Sui, every listing is a <strong>Shared Object</strong>. 
+                Traditional escrows are hidden in private databases. On Sui, every listing is a <strong>Shared Object</strong>.
                 This means any wallet, explorer, or marketplace can discover and interact with your warranty item.
               </p>
-              
+
               <div className="grid grid-cols-2 gap-6">
                 <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
                   <Fingerprint className="w-6 h-6 text-blue-400 mb-4" />
@@ -161,7 +162,7 @@ export default function HowItWorksPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-zinc-900 mb-12 text-center">Smart Contract Protections</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               <div className="p-8 bg-zinc-50 rounded-[2.5rem] border border-zinc-100">
                 <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-600 mb-6 shadow-sm">
@@ -215,7 +216,7 @@ export default function HowItWorksPage() {
                   The protocol uses generic type parameters for coin support. This means it can handle SUI, USDC, or any other fungible token on the Sui network.
                 </AccordionContent>
               </AccordionItem>
-              
+
               <AccordionItem value="item-2" className="border-zinc-100">
                 <AccordionTrigger className="text-left font-bold py-6 hover:no-underline">
                   Is there a time limit for the buyer?
@@ -237,10 +238,10 @@ export default function HowItWorksPage() {
           <p className="text-zinc-500 mb-8">Join the marketplace where the code is the escrow agent.</p>
           <div className="flex items-center justify-center gap-4">
             <Button asChild variant="outline" className="rounded-full px-8 h-12 border-zinc-200">
-               <Link href="/dashboard">Create Listing</Link>
+              <Link href="/dashboard">Create Listing</Link>
             </Button>
             <Button asChild className="rounded-full px-8 h-12 bg-blue-600 hover:bg-blue-500">
-               <Link href="/marketplace">Browse Marketplace</Link>
+              <Link href="/marketplace">Browse Marketplace</Link>
             </Button>
           </div>
         </div>
